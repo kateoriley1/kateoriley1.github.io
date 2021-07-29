@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register Page</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
+        <style type = "text/css">
+        * {
+            font-family: 'Montserrat', sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: -20px 0 50px;
+            background: linear-gradient(90deg, rgba(238,209,225,1) 0%, rgba(235,153,221,1) 30%, rgba(231,111,90,1) 65%, rgba(232,167,76,1) 100%);
+        }
+        .everything {
+            background-color: white;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            position: relative;
+            overflow: hidden;
+            width: 768px;
+            max-width: 100%;
+            min-height: 480px;
+        }
+        .headerandform {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            left: 50%;
+            z-index: 2;
+            text-align: center;
+        }
+        .overlaymecontainer {
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 50%;
+            height: 100%;
+            background-image: url(https://images.unsplash.com/photo-1487376318617-f43c7b41e2e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);
+            background-position: 40% 50%;
+            background-size: 850px;
+        }
+        .submitbutton {
+            border: 0px;
+            background: linear-gradient(90deg, rgba(238,209,225,1) 0%, rgba(235,153,221,1) 30%, rgba(231,111,90,1) 65%, rgba(232,167,76,1) 100%);
+            color: white;
+        }    
+        </style>
+    </head>
+    <body>
+        <div class = "everything">
+        <div class = "headerandform">
+        <header>
+            <h1>Sign up</h1>
+        </header>
+        <section>
+            <!-- login form  -->
+            <form name = "register info" action = "homepage.html" onsubmit = "return validate()" method = "post">
+                <input type = "text" id = "First Name" placeholder = "First Name" required/>
+                <br/>
+                <br/>
+                <input type = "text" id = "Last Name" placeholder = "Last Name" required/>
+                <br/>
+                <br/>
+                <input type = "text" id = "Email" placeholder = "Email Address" required/>
+                <br/>
+                <br/>
+                <input type = "text" id = "Username" placeholder = "Username" required/>
+                <br/>
+                <br/>
+                <input type = "password" id = "Password" placeholder = "Password" required/>
+                <br/>
+                <br/>
+                <input type = "password" id = "Confirm Password" placeholder = "Confirm Password" required/>
+                <br/>
+                <br/>
+
+                <input type = "checkbox" id = "chkb1" value = "termsofservice"/>
+                <label>I agree to terms of service</label>
+                <br/>
+                <br/>
+
+                <input type = "submit" value = "   Sign up   " class = "submitbutton">
+                <br/>
+                <br/>
+            </form>
+            <a href="login page ex 1.html">I already have an account</a>
+        </section>
+        </div>
+        <div class = "overlaymecontainer">
+        </div>
+    </div>
+    </body>
+    <script type="text/javascript">
+        function validate()
+		{
+            event.preventDefault();
+            var b = false;
+
+            //check email
+            var email = document.getElementById("Email").value;
+            var atsymbol = email.indexOf("@");
+            var period =  email.lastIndexOf(".");
+            if(period - atsymbol < 2)
+            {
+                alert("Please enter a valid email address");
+                return b;
+            }
+
+            //check password
+            var pass = document.getElementById("Password").value;
+            var confpass = document.getElementById("Confirm Password").value;
+            if (pass != confpass)
+            {
+                alert("Passwords do not match");
+                console.log(pass);
+                console.log(confpass);
+                return b;
+            }
+
+            //check terms of service
+            var chkbx = document.getElementById("chkb1");
+            if (chkbx.checked == false)
+            {
+                alert("Please agree to terms of service");
+                return b;
+            }
+
+            // //personalized welcome message
+            // else {
+            //     var name = document.getElementById("First Name").value;
+            //     alert("Welcome, " + name);
+            // }
+            b = true;
+            console.log(b);
+            window.location.href = 'http://127.0.0.1:5500/homepage.html';
+            return b;
+        }
+    </script>
+</html>

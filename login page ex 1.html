@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
+        <style type = "text/css">
+        h1 {
+            text-align: center;
+            font-family: 'Zen Tokyo Zoo', cursive;
+            font-size: 50px;
+            background: rgba(232,167,76,1);
+            background: linear-gradient(90deg, rgba(238,209,225,1) 0%, rgba(238,209,225,1) 35%, rgba(235,153,221,1) 45%, rgba(231,111,90,1) 55%, rgba(232,167,76,1) 65%, rgba(232,167,76,1) 100%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-text-fill-color: transparent;
+        }
+        body {
+            background-image: url('../brooke-lark-atzWFItRHy8-unsplash.jpg');
+            background-size: 1500px;
+        }
+        * {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .submitbutton {
+            border: 0px;
+            background: linear-gradient(90deg, rgba(238,209,225,1) 0%, rgba(235,153,221,1) 30%, rgba(231,111,90,1) 65%, rgba(232,167,76,1) 100%);
+            color: white;
+        }
+        a {
+            color: lightgrey;
+        }
+        a:visited {
+            color: grey;
+        }
+        .form {
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            max-width: 250px;
+            margin: 0 auto 100px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>More Than Salad</h1>
+        </header>
+        <section>
+            <div class = "form">
+            <h2>Login</h2>
+            <!-- login form  -->
+            <form name = "login info" action = "homepage.html">
+                <input type = "text" name = "logininfo" id = "USER" placeholder = "Enter Your Username" required/>
+                <br/>
+                <br/>
+                <input type = "password" name = "logininfo" id = "PASS" placeholder = "Enter Your Password" required/>
+                <br/>
+                <br/>
+                <input type = "submit" value = "                 Login                 " class = "submitbutton">
+                <br/>
+            </form>
+            <div>
+                <p>Not a member?</p>
+                <a href="register.html">register</a>
+                <br/>
+                <br/>
+            </div>
+            </div>
+        </section>
+    </body>
+</html>
